@@ -18,7 +18,22 @@ public class DogHouseTest {
     // TODO - Create tests for `Integer getNumberOfDogs()`
 
     @Test
-    public void testGetNumberOfDogs() {
+    public void testRemoveDogs() {
+        // Given (some
+        String name = "Milo";
+        Date birthDate = new Date();
+        Dog animal = AnimalFactory.createDog(name, birthDate);
+        DogHouse.clear();
+
+        // When
+        DogHouse.remove(animal);
+
+        // Then
+        DogHouse.getNumberOfDogs();
+    }
+
+    @Test
+    public void testAddDogs() {
         // Given (some
         String name = "Milo";
         Date birthDate = new Date();
@@ -31,4 +46,23 @@ public class DogHouseTest {
         // Then
         DogHouse.getNumberOfDogs();
     }
+
+    @Test
+    public void testGetNumberOfDogs() {
+        // Given (some
+        String name = "Milo";
+        Date birthDate = new Date();
+        Dog animal = AnimalFactory.createDog(name, birthDate);
+        DogHouse.clear();
+
+        // When
+        DogHouse.add(animal);
+
+        // Then
+        DogHouse.getNumberOfDogs();
+
+        
+    }
+
+
 }
